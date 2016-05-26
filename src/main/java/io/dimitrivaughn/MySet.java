@@ -24,14 +24,7 @@ public class MySet <T> extends MyArrayList <T> {
     @Override
     public void add(T element) {
         if (!contains(element)) {
-            if (isFull()) {
-                resizeArray();
-                array[capacity] = element;
-            } else {
-                array[indexPointer] = element;
-            }
-            indexPointer++;
-            capacity++;
+            super.add(element);
         }
         else{
             System.out.println("MySet already contains: "+ element);
@@ -42,20 +35,7 @@ public class MySet <T> extends MyArrayList <T> {
     public void add(int index, T element) {
         int arrayLength = lengthTotal();
         if (!contains(element)) {
-            if (isFull()) {
-                resizeArray();
-                array[arrayLength] = array[arrayLength - 1];
-                for (int i = arrayLength - 1; i >= index; i--) {
-                    if (array[i] != null) {
-                        array[i] = array[i - 1];
-                    }
-                }
-                array[index] = element;
-                capacity++;
-            } else {
-                array[index] = element;
-                capacity++;
-            }
+            super.add(index, element);
         }
         else{
             System.out.println("MySet already contains: "+ element);
