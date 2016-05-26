@@ -9,9 +9,9 @@ public class MyArrayList<T> {
 
 // declaring fields
 
-    private Object[] array;
-    private int indexPointer;
-    private int capacity;
+    protected Object[] array;
+    protected int indexPointer;
+    protected int capacity;
 
 // constructor initalizing an array of length 10 within the class
 
@@ -32,15 +32,13 @@ public class MyArrayList<T> {
 // method that adds an element to the first open index of an array
 
     public void add(T element){
-        if(isFull()) {
+
             resizeArray();
             array[capacity] = element;
-        }
-        else{
-            array[indexPointer] = element;
-        }
+
         indexPointer++;
         capacity++;
+
     }
 
     public void add(int index, T element) {
@@ -94,8 +92,8 @@ public class MyArrayList<T> {
     }
 
     public boolean contains(T element){
-        for(Object index : array){
-            if(index.equals(element)){
+        for(int i = 0; i<array.length; i++){
+            if(element.equals(array[i])){
                 return true;
             }
         }

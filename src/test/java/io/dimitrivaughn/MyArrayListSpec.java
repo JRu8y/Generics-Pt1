@@ -1,5 +1,6 @@
 package io.dimitrivaughn;
 
+import com.sun.org.apache.xerces.internal.impl.dv.xs.IntegerDV;
 import com.sun.org.apache.xerces.internal.xs.StringList;
 import org.junit.Assert;
 import org.junit.Before;
